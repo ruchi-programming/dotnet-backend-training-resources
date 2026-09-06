@@ -109,3 +109,14 @@ public sealed class ExceptionHandlingMiddleware
             cancellationToken: context.RequestAborted);
     }
 }
+
+
+Important behaviours:
+- Expected client and missing-resource errors are logged as warnings.
+- Unexpected errors are logged as errors.
+- Internal exception details are not returned for 500 responses.
+- Every response includes a trace identifier.
+- If the response has already started, the middleware rethrows because it can no longer safely replace the response.
+Next we’ll add the request pipeline and demonstration endpoints.
+
+*/
