@@ -1,7 +1,5 @@
 namespace NotificationApi.Models;
 
-public sealed record NotificationResult(
-    Guid NotificationId,
-    string Sender,
+public sealed record NotificationRequest(
     string Recipient,
-    DateTimeOffset AcceptedAtUtc);
+    string Message);
