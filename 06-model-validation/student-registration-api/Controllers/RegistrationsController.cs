@@ -19,8 +19,14 @@ public sealed class RegistrationsController
             request.Course,
             DateTimeOffset.UtcNow);
 
+        /*
         return Created(
             $"/api/registrations/{response.RegistrationId}",
             response);
+        */
+
+        return StatusCode(
+    StatusCodes.Status201Created,
+    response);
     }
 }
